@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white shadow-lg p-6">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://www.till.tech/news/images/blog-successfulblogging.jpg" alt="Logo"
+                    class="w-12 rounded-full border-2 border-amber-400">
+                <h1 class="text-2xl font-bold">Blog Page</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-amber-400">Home</a></li>
+                    <li><a href="#" class="hover:text-amber-400">About</a></li>
+                    <li><a href="/add_blog" class="hover:text-amber-400 block">Blog (Add)</a></li>
+                    <li><a href="#" class="hover:text-amber-400">Contact</a></li>
+                    <li><a href="/logout" class="hover:text-amber-400">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto flex mt-8">
+
+        <!-- Blog Posts -->
+        <main class="flex-1 ml-8">
+            <section>
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Discover Your Next Adventure: Travel, Tips, and Tales</h2>
+                <div class="space-y-8">
+                    <% blogsData.map((blog) => { %>
+                    <article class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="md:flex">
+                            <img src="<%= blog.image %>" alt="blog" class="w-full h-64 object-cover md:w-1/3">
+                            <div class="p-6 flex flex-col justify-between">
+                                <div>
+                                    <h1 class="text-2xl font-bold text-gray-800 mb-2">
+                                        <%= blog.blog_name %>
+                                    </h1>
+                                    <p class="text-gray-600 mb-4"><%= blog.blog_ratings %></p>
+                                    <p class="text-gray-700">
+                                        <%= blog.blog_disc %>
+                                    </p>
+                                </div>
+                                <div class="mt-4 flex justify-end space-x-4">
+                                    <a href="/update_Blog?id=<%= blog._id %>"
+                                        class="px-4 py-2 bg-amber-400 text-white font-semibold rounded hover:bg-amber-500">Edit</a>
+                                    <a href="/deleteBlog?id=<%= blog._id %>"
+                                        class="px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <% }) %>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

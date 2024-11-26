@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-500 text-gray-800 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-xl">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Sign Up</h2>
+        <form action="/signup" method="post" class="space-y-6">
+            <div>
+                <div class="mb-4">
+                    <input type="text" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username"
+                        required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                </div>
+                <div class="mb-4">
+                    <input type="email" placeholder="Email Address" aria-label="Email" aria-describedby="basic-addon1" name="email"
+                        required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                </div>
+                <div class="mb-4">
+                    <input type="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password"
+                        required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                </div>
+                <div class="mb-4">
+                    <input type="text" placeholder="Phone" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit"
+                    class="w-full bg-green-600 text-white px-4 py-2 rounded-md shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
+                    Sign Up
+                </button>
+            </div>
+
+            <div class="text-center mt-6">
+                <a href="/login" class="text-sm text-blue-500 hover:underline focus:outline-none">Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

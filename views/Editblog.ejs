@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-xl">
+        <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Update Blog</h2>
+        <form action="/updateblog" method="post" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label for="blog_name" class="block text-sm font-medium text-gray-700">Author Name:</label>
+                <input type="text" id="blog_name" name="blog_name"
+                    class="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-800"
+                    value="<%= data.blog_name %>" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="blog_disc" class="block text-sm font-medium text-gray-700">Blog Description:</label>
+                <textarea id="blog_disc" name="blog_disc"
+                    class="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-800"
+                    required><%= data.blog_disc %></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="image" class="block text-sm font-medium text-gray-700">Image:</label>
+                <input type="file" id="image" name="image"
+                    class="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-800"
+                    value="<%= data.image %>" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit"
+                    class="w-full px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
